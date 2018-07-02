@@ -1,0 +1,128 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*End CSS Reset*/
+
+@font-face {
+	font-family: 'Font Awesome';
+}
+
+@font-face {
+  font-family: 'Open Sans';
+}
+
+* {
+	font-family: 'Open Sans', 'Font Awesome', sans-serif !important;
+}
+
+body {
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+	font-size: 12px;
+	padding: 10px 30px;
+
+	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.btn-primary {
+	color: #fff !important;
+	background-color: #e84c3d;
+	text-transform: uppercase;
+	border: 0px;
+	border-radius: 0px;
+}
+
+.btn-primary:hover, .btn-primary a:hover {
+	color: #e84c3d !important;
+	background-color: #fff;
+	border: 0px;
+	border-radius: 0px;
+}
+
+.form-control {
+	color: #828d99;
+	font-size: 12px;
+	background-color: #f6f6f7;
+	padding: 10px 30px;
+
+	box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+	border: 0px;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.container-condensed {
+	width: 50%;
+  flex-direction: column;
+	margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.main-header {
+	padding: 10% 0;
+}
+
+.site-title {
+  color: #e84c3d;
+  font-size: 24px;
+  font-weight: 100;
+}
