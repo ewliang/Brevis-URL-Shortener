@@ -1,7 +1,7 @@
 <template>
   <div class = "url-result">
-    <p class = "original-url" href = "#">www.eric-liang.com</p>
-    <a class = "shorten-url" href = "#">www.brevis.com/sdf3sa</a>
+    <p class = "original-url">{{originalURL}}</p>
+    <a class = "shorten-url" rel = "nofollow" href = "#">{{shortenURL}}</a>
     <button class = "btn-red">Copy</button>
     <button class = "btn-red"><i class = "fa fa-chart-bar fa-lg"></i></button>
   </div>
@@ -11,7 +11,7 @@
 import axios from 'axios'
 
 export default {
-
+  props: ['originalURL', 'shortenURL']
 }
 </script>
 
@@ -20,6 +20,7 @@ export default {
   color: #828d99;
   background-color: #fafafa;
   padding: 30px;
+  margin: 0 !important;
 }
 
 .original-url {
