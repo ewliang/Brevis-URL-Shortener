@@ -2,20 +2,7 @@
   <footer class = "main-footer">
     <div class = "container">
       <h3>brevis_</h3>
-      <ul>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-      </ul>
-      <ul>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-        <li><a href = "#"></a></li>
-      </ul>
+      <br/>
       <div class = "">
         Copyright &copy; 2018 Brevis. Designed and Developed by <a href = "https://www.eric-liang.com">Eric Liang</a>. All Rights Reserved.
       </div>
