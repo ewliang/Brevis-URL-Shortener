@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "axios": "^0.18.0",
     "nuxt": "^1.0.0"
   },
@@ -22,5 +23,6 @@
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^4.0.0"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
