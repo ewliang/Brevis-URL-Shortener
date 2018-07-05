@@ -1,17 +1,29 @@
 <template>
-  <form id = "urlInputForm" v-on:submit = "generateShortURL">
-    <input type = "url" v-model = "inputURL" class = "form-control" id = "urlInputFormControl" placeholder = "e.g.: www.eric-liang.com"/>
-    <input type = "submit" class = "btn btn-primary" value = "Shrink!"/>
-  </form><!--end -->
+  <div>
+    <form id = "urlInputForm" v-on:submit.prevent = "generateShortURL">
+      <input type = "url" v-model = "inputURL" class = "form-control" id = "urlInputFormControl" placeholder = "e.g.: www.eric-liang.com"/>
+      <input type = "submit" class = "btn btn-primary" value = "Shrink!"/>
+    </form><!--end -->
+    <ul v-if = "urlResults.length">
+      <li v-for = "(urlResult, index) in urlResults.slice().reverse()" v-bind:key = "index">
+        <URLResult v-bind:originalURL = urlResult.oldURL v-bind:shortenURL = urlResult.shortenURL></URLResult>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
+import URLResult from '~/components/URLResult.vue'
 
 export default {
+  components: {
+    URLResult
+  },
   data () {
     return {
-      inputURL: ''
+      inputURL: '',
+      urlResults: []
     }
   },
   methods: {
@@ -19,12 +31,14 @@ export default {
       var longURL = {
         originalURL: this.inputURL
       }
-      alert(this.inputURL)
-      console.log(this.inputURL)
       axios.post(`http://localhost:4000/api/`, longURL)
       .then(response => {
-        console.log("Successfully generated ShortURL!!!")
-        console.log("SHORT URL: " + response)
+        console.log("Successfully generated ShortURL!")
+        var url = {
+          oldURL: response.data.oldURL,
+          shortenURL: 'http://localhost:3000/' + response.data.shortenURL
+        }
+        this.urlResults.push(url)
       })
       .catch(error => {
         console.log(error);
@@ -36,7 +50,6 @@ export default {
 
 <style scoped>
 #urlInputForm {
-  margin-top: 0 !important;
   display: flex;
   align-items: stretch;
 }
