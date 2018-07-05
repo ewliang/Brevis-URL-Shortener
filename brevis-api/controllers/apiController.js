@@ -1,8 +1,4 @@
 var ShortURL = require('../models/ShortURL');
-var config = require('../config/config');
-var mongoose = require('mongoose');
-mongoose.connect(config.database.connectionURL);
-
 
 /* PUBLIC */
 exports.getHome = function(req, res) {
@@ -19,16 +15,15 @@ exports.postGenerateShortURL = function(req, res) {
   var regex = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   //Check If Input Is Valid URL String
   if(regex.test(longURL)) {
-    console.log("REGEX TEST: Valid URL String");
+    console.log("RegEx isValid URL String Format Result: [" + regex.test(longURL) + "]");
     //Check if a URL like this already exists in the database.
     ShortURL.findOne({ 'originalURL': longURL }, (err, data) => {
       if(err) {
-        console.log('ERROR: Error while attempting to search for original URL in database.');
+        console.log(err);
         return res.json({ error: "Error! This Brevis URL Does Not Exist!" });
       } else {
         if(data == null) {
-          console.log("EMPTY DATASET");
-          console.log("ORIGINAL URL EXISTS: False");
+          console.log("Received URL Input Exists In Database [" + data + "]");
 
           //Generate Shorten URL String
           var short = Math.floor(Math.random() * 100000).toString();
@@ -40,16 +35,16 @@ exports.postGenerateShortURL = function(req, res) {
           //Save Newly Created URL Entry Into Database
           data.save(err => {
             if(err) {
-              console.log("ERROR: Error occurred while attempting to save URL to database.");
+              console.log(err);
               res.json({ message: "Error occurred while attempting to save URL to database." });
             } else {
-              console.log("SUCCESS: New shorten URL successfully saved into database!");
+              console.log("User input URL [" + longURL + "] was successfully saved. Generated short URL [/" + short + "]");
               res.json({ oldURL: longURL, shortenURL: short });
             }
           });
         } else {
-          console.log("ORIGINAL URL EXISTS: True");
-          console.log("EXISTING URL: " + data.originalURL + " " + data.shortenURL);
+          console.log("Received URL Input Exists In Database [" + data + "].");
+          console.log("Found originalURL [" + data.originalURL + "] with corresponding shortURL [/" + data.shortenURL + "].");
           var re = new RegExp("^(http|https)://", "i");
           var strToCheck = data.originalURL;
           if(re.test(strToCheck)) {
@@ -61,12 +56,35 @@ exports.postGenerateShortURL = function(req, res) {
       }
     });
   } else {
-    console.log("REGEX RESULT: Invalid URL String");
+    console.log("RegEx isValid URL String Format Result: [" + regex.test(longURL) + "]");
   }
 }
 
-// GET Shorten URL - Search DB for shorten URL. Redirect to destination if valid.
 exports.getShortURL = function(req, res) {
+  var longURL = req.params.longURL;
+  ShortURL.findOne({ 'shortenURL': shorterURL }, (err, data) => {
+    if(err) {
+      console.log("ERROR: Invalid Shorten URL Request Received!");
+      res.json({ error: "The requested shorten URL does not exist!" });
+    } else {
+      if(data == null) {
+        console.log("EMPTY DATASET");
+      } else {
+        console.log("Valid Shorten URL Request Received!");
+        var re = new RegExp("^(http|https)://", "i");
+        var strToCheck = data.originalURL;
+        if(re.test(strToCheck)) {
+          res.redirect(302, 'data.originalURL');
+        } else {
+          res.redirect(302, 'http://' + data.originalURL);
+        }
+      }
+    }
+  });
+}
+
+// GET Shorten URL - Search DB for shorten URL. Redirect to destination if valid.
+exports.redirectByShortURL = function(req, res) {
   var shorterURL = req.params.shorterURL;
   ShortURL.findOne({ 'shortenURL': shorterURL }, (err, data) => {
     if(err) {
