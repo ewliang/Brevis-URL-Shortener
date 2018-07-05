@@ -12,8 +12,11 @@ router.get('/', apiController.getHome);
 // POST Generate Shorten URL
 router.post('/', apiController.postGenerateShortURL);
 
+// GET Shorten URL by Long URL
+router.get('/search', apiController.getShortURL);
+
 // GET Redirect URL via Shorten URL
-router.get('/:shorterURL', apiController.getShortURL);
+router.get('/:shorterURL', apiController.redirectByShortURL);
 
 
 module.exports = router;
