@@ -4,7 +4,11 @@ var Schema = mongoose.Schema;
 var ShortURLSchema = new Schema(
   {
     originalURL: String,
-    shortenURL: String
+    shortenURL: String,
+    timesClickedOn: {
+      type: Number,
+      default: 0
+    }
   },
   {
     timestamps: true
