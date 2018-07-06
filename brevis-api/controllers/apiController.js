@@ -97,11 +97,14 @@ exports.redirectByShortURL = function(req, res) {
         console.log("Valid Shorten URL Request Received!");
         var re = new RegExp("^(http|https)://", "i");
         var strToCheck = data.originalURL;
+        // Return the original URL for redirecting via the frontend.
+        res.json(data.originalURL);
+        /*
         if(re.test(strToCheck)) {
           res.redirect(302, 'data.originalURL');
         } else {
           res.redirect(302, 'http://' + data.originalURL);
-        }
+        }*/
       }
     }
   });
