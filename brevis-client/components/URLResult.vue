@@ -1,8 +1,8 @@
 <template>
   <div class = "url-result">
     <p class = "original-url">{{originalURL}}</p>
-    <a class = "shorten-url" rel = "nofollow" href = "#">{{shortenURL}}</a>
-    <button class = "btn-red">Copy</button>
+    <a class = "shorten-url" :id = shortenURL rel = "nofollow" :href = shortenURL>{{shortenURL}}</a>
+    <button class = "btn-red" v-on:click.prevent = "copyShortenURL">Copy</button>
     <button class = "btn-red"><i class = "fa fa-chart-bar fa-lg"></i></button>
   </div>
 </template>
@@ -11,7 +11,20 @@
 import axios from 'axios'
 
 export default {
-  props: ['originalURL', 'shortenURL']
+  props: ['originalURL', 'shortenURL'],
+  methods: {
+    copyShortenURL (event) {
+      const element = document.getElementById(this.$props.shortenURL)
+      var temp = document.createElement('input')
+      temp.setAttribute('value', element.innerHTML)
+      document.body.appendChild(temp)
+      temp.select()
+      document.execCommand('copy')
+      document.body.removeChild(temp)
+      // document.execCommand('copy')
+      // alert('Copied ' + shortenURL.text)
+    }
+  }
 }
 </script>
 
