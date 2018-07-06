@@ -1,7 +1,7 @@
 <template>
   <div>
     <form id = "urlInputForm" v-on:submit.prevent = "generateShortURL">
-      <input type = "url" v-model = "inputURL" class = "form-control" id = "urlInputFormControl" placeholder = "e.g.: www.eric-liang.com"/>
+      <input type = "url" v-model = "inputURL" class = "form-control" id = "urlInputFormControl"/>
       <input type = "submit" class = "btn btn-primary" value = "Shrink!"/>
     </form><!--end -->
     <ul v-if = "urlResults.length">
