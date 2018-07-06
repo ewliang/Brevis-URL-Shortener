@@ -3,12 +3,12 @@
     <form id = "urlInputForm" v-on:submit.prevent = "generateShortURL">
       <input type = "url" v-model = "inputURL" class = "form-control" id = "urlInputFormControl"/>
       <input type = "submit" class = "btn btn-primary" value = "Shrink!"/>
-    </form><!--end -->
+    </form><!--end urlInputForm-->
     <ul v-if = "urlResults.length">
       <li v-for = "(urlResult, index) in urlResults.slice().reverse()" v-bind:key = "index">
         <URLResult v-bind:originalURL = urlResult.oldURL v-bind:shortenURL = urlResult.shortenURL></URLResult>
       </li>
-    </ul>
+    </ul><!--end urlResults-->
   </div>
 </template>
 
@@ -34,11 +34,14 @@ export default {
       axios.post(`http://localhost:4000/api/`, longURL)
       .then(response => {
         console.log("Successfully generated ShortURL!")
+        // Create url json object, and push into the urlResults[]
         var url = {
           oldURL: response.data.oldURL,
           shortenURL: 'http://localhost:3000/' + response.data.shortenURL
         }
         this.urlResults.push(url)
+        // Clears input form after successfully generating shorten URL.
+        this.inputURL = ''
       })
       .catch(error => {
         console.log(error);
