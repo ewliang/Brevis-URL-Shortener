@@ -21,8 +21,6 @@ export default {
       temp.select()
       document.execCommand('copy')
       document.body.removeChild(temp)
-      // document.execCommand('copy')
-      // alert('Copied ' + shortenURL.text)
     }
   }
 }
