@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style scoped>
-
+.main-header {
+  flex-shrink: 0;
+  padding: 10% 0;
+}
 </style>

@@ -1,12 +1,10 @@
 <template>
-  <footer class = "main-footer">
-    <div class = "container">
-      <h3>brevis_</h3>
-      <br/>
-      <div class = "">
-        Copyright &copy; 2018 Brevis. Designed and Developed by <a href = "https://www.eric-liang.com">Eric Liang</a>. All Rights Reserved.
-      </div>
-    </div><!--end container-->
+  <footer class = "main-footer text-center">
+    <h3>brevis_</h3>
+    <br/>
+    <p>
+      Copyright &copy; 2018 <a href = "https://www.eric-liang.com">Eric Liang</a>. Designed and Developed by <a href = "https://www.eric-liang.com">Eric Liang</a>. All Rights Reserved.
+    </p>
   </footer><!--end main-footer-->
 </template>
 
@@ -20,11 +18,22 @@ export default {
 
 <style scoped>
 .main-footer {
+  font-family: 'Open Sans', sans-serif;
   width: 100%;
-  height: auto;
+  min-height: 100px;
+  max-height: 100%;
   color: #fff !important;
   background-color: #e84c3d;
-  padding: 3% auto;
-  text-align: center;
+  padding: 3% 0 !important;
+
+  display: flex;
+  flex-direction: column !important;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.main-footer p {
+  line-height: 1.6;
 }
 </style>

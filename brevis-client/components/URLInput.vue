@@ -53,8 +53,10 @@ export default {
 
 <style scoped>
 #urlInputForm {
+  max-width: 50%;
   display: flex;
   align-items: stretch;
+  margin: 0 auto;
 }
 
 #urlInputFormControl {
