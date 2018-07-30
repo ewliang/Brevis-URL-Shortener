@@ -3,6 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const cors = require('cors');
 
 const mongoose = require('mongoose');
@@ -11,6 +12,7 @@ const databaseConfig = require('./config/config');
 const apiRoutes = require('./routes/api');
 
 const app = express();
+app.use(helmet());
 
 mongoose.Promise = require('bluebird');
 mongoose.connect(databaseConfig.database.connectionURL);
@@ -37,7 +39,8 @@ app.get('/', function(req, res) {
   });
 });
 
-app.listen(4000, function(req, res) {
-  console.log("Brevis is now running on port 4000.");
+const port = process.env.PORT || 4000;
+app.listen(port, function(req, res) {
+  console.log("Brevis is now running on port " + port + ".");
 });
 module.exports = app;
