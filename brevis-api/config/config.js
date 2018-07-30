@@ -2,6 +2,6 @@
 
 module.exports = {
   database: {
-    connectionURL: ''
+    connectionURL: process.env.databaseURL
   }
 };
