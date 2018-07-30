@@ -9,17 +9,13 @@
 </template>
 
 <script>
-import axios from 'axios'
-
-export default {
-
-}
 </script>
 
 <style scoped>
 .main-footer {
   font-family: 'Open Sans', sans-serif;
   width: 100%;
+  max-width: 100%;
   min-height: 100px;
   max-height: 100%;
   color: #fff !important;
@@ -30,7 +26,6 @@ export default {
   flex-direction: column !important;
   justify-content: center;
   flex-shrink: 0;
-  align-self: flex-end;
 }
 
 .main-footer p {

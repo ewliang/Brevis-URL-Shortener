@@ -28,10 +28,13 @@ export default {
 
 <style scoped>
 .url-result {
+  min-width: 300px;
+  width: 100%;
+  max-width: 80%;
   color: #828d99;
   background-color: #fafafa;
   padding: 30px;
-  margin: 0 !important;
+  margin: 0 auto !important;
 }
 
 .original-url {

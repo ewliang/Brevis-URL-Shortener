@@ -105,7 +105,6 @@ a {
 
 .container-condensed {
 	width: 100%;
-	min-height: 50vh;
   flex-direction: column;
 	padding: auto 25%;
 
