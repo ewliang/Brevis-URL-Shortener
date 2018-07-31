@@ -95,8 +95,8 @@ exports.redirectByShortURL = function(req, res) {
         console.log("EMPTY DATASET");
       } else {
         console.log("Valid Shorten URL Request Received!");
-        var re = new RegExp("^(http|https)://", "i");
-        var strToCheck = data.originalURL;
+        //var re = new RegExp("^(http|https)://", "i");
+        //var strToCheck = data.originalURL;
         // Return the original URL for redirecting via the frontend.
         res.json(data.originalURL);
         /*
