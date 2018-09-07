@@ -7,7 +7,20 @@ NOTE:
 - This is NOT made with Bitly API or any URL Shortening APIs from any URL Shortening Sites.
 - I made this for the sake of fun and practice. I didn't focus too much on security of the webapp, so use at your own risk if you plan to release this into a production environment. You are responsible for anything that happens.
 
+**Demo**
+Demo URL: [https://brevisapp.herokuapp.com](https://brevisapp.herokuapp.com)
+
 ## Getting Started
+### Requirements
+- Node.js
+
+#### Knowledge/Understanding
+- HTML/CSS/JS - Language
+- Vue.js (Nuxt.js) - Frontend Framework
+- Node.js - Backend Framework
+- Express.js - Backend Framework
+- Mocha.js/Chai.js - Backend Testing
+
 ### Deployment
 0. Make sure you have the necessary tools installed on your machine to run Node.js, Nuxt.js, and Express.js applications.
 1. Run "npm install"
@@ -17,10 +30,12 @@ NOTE:
 3. Next start the API frontend in brevis-client folder by running "npm run dev" if you're on a development machine.
 4. Enjoy! :)
 
-## Built With
-- HTML/CSS/JS - Language
-- NuxtJS - Frontend Framework
-- ExpressJS - Backend Framework
+### Testing
+Assuming you just downloaded the project and extracted it from the .zip folder.
+1. Run "npm install" in the api folder.
+2. Run "npm test" to run the tests created.
+
+All tests are contained in the /brevis-api/test folder.
 
 ## Authors
 - [Eric Liang](https://www.eric-liang.com)
