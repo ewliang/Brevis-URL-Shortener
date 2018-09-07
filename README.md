@@ -8,7 +8,7 @@ NOTE:
 - I made this for the sake of fun and practice. I didn't focus too much on security of the webapp, so use at your own risk if you plan to release this into a production environment. You are responsible for anything that happens.
 
 **Demo**
-Demo URL: [https://brevisapp.herokuapp.com](https://brevisapp.herokuapp.com)
+: [https://brevisapp.herokuapp.com](https://brevisapp.herokuapp.com)
 
 ## Getting Started
 ### Requirements
