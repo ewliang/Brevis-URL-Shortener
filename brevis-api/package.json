@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon start index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive ./test",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install"
   },
   "keywords": [
     "brevis",
@@ -36,6 +37,9 @@
     "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.17.5"
   }
 }
