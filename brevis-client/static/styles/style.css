@@ -66,6 +66,14 @@ a {
   text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+}
+
 .btn {
 	font-size: 12px;
 	padding: 10px 30px;
@@ -113,11 +121,4 @@ a {
 
 .text-center {
   text-align: center;
-}
-
-.site-title {
-  color: #e84c3d;
-  font-size: 48px;
-  font-weight: 100;
-	line-height: 1.7;
 }
