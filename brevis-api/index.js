@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -15,7 +16,7 @@ const app = express();
 app.use(helmet());
 
 mongoose.Promise = require('bluebird');
-mongoose.connect(databaseConfig.database.connectionURL);
+mongoose.connect(databaseConfig.database.connectionURL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'There is an error while attempting to connect to the database.'));
 db.once('open', function() {
