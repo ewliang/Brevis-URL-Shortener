@@ -1,4 +1,7 @@
+require('dotenv').config();
 var ShortURL = require('../models/ShortURL');
+const crypto = require('crypto');
+const SHORTEN_URL_LENGTH = parseInt(process.env.shortenURLLength) ? parseInt(process.env.shortenURLLength) : 3;
 
 /* PUBLIC */
 exports.getHome = function(req, res) {
@@ -26,7 +29,8 @@ exports.postGenerateShortURL = function(req, res) {
           console.log("Received URL Input Exists In Database [" + data + "]");
 
           //Generate Shorten URL String
-          var short = Math.floor(Math.random() * 100000).toString();
+          var short = createHash(longURL, SHORTEN_URL_LENGTH);
+          
           //Create New URL Entry Object
           var data = new ShortURL({
             originalURL: longURL,
@@ -108,4 +112,12 @@ exports.redirectByShortURL = function(req, res) {
       }
     }
   });
+}
+
+function createHash(data, length) {
+  return crypto.createHash('shake256', {
+    outputLength: length
+  })
+  .update(data)
+  .digest('hex');
 }
