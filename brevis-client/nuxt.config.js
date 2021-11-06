@@ -18,6 +18,7 @@ module.exports = {
     '~/static/styles/style.css'
   ],
   modules: [
+    ['@nuxtjs/dotenv', { systemvars: true }],
     '@nuxtjs/axios'
   ],
   /*
