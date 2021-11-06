@@ -3,7 +3,7 @@
     <h3>brevis_</h3>
     <br/>
     <p>
-      Copyright &copy; 2018 <a href = "https://www.eric-liang.com">Eric Liang</a>. Designed and Developed by <a href = "https://www.eric-liang.com">Eric Liang</a>. All Rights Reserved.
+      Copyright &copy; {{ new Date().getFullYear() }} <a href = "https://www.eric-liang.com">Eric Liang</a>. Designed and Developed by <a href = "https://www.eric-liang.com">Eric Liang</a>. All Rights Reserved.
     </p>
   </footer><!--end main-footer-->
 </template>
