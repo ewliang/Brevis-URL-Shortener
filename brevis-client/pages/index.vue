@@ -1,7 +1,7 @@
 <template>
-  <section class="container-condensed">
-    <URLInput/>
-  </section>
+    <section class="container-condensed">
+        <URLInput/>
+    </section>
 </template>
 
 <script>
@@ -14,6 +14,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
