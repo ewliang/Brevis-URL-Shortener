@@ -1,7 +1,8 @@
 'use strict';
+require('dotenv').config();
 
 module.exports = {
-  database: {
-    connectionURL: process.env.databaseURL
-  }
+    database: {
+        connectionURL: process.env.databaseURL
+    }
 };
