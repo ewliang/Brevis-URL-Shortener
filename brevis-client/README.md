@@ -20,6 +20,10 @@ $ npm run build
 $ npm start
 ```
 
+## Setup
+You will need to declare an environment variable either by creating a .env file in the project root directly or enter the value into your web host settings with the following names and assign them their appropriate values:
+- BREVIS_BACKEND_URL - The url of the brevis backend. By default, if you are developing it locally, it is set to http://localhost:4000 (Note, do not add a trailing '/')
+
 ## Author
 [Eric Liang](https://www.eric-liang.com)
 

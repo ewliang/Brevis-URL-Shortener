@@ -15,6 +15,7 @@
 <script>
 import axios from 'axios'
 import URLResult from '~/components/URLResult.vue'
+const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL ? process.env.BREVIS_BACKEND_URL : 'http://localhost:4000'
 
 export default {
   components: {
@@ -31,13 +32,13 @@ export default {
       var longURL = {
         originalURL: this.inputURL
       }
-      axios.post(`http://localhost:4000/api/`, longURL)
+      axios.post(BREVIS_BACKEND_URL + '/api/', longURL)
       .then(response => {
         console.log("Successfully generated ShortURL!")
         // Create url json object, and push into the urlResults[]
         var url = {
           oldURL: response.data.oldURL,
-          shortenURL: 'http://localhost:3000/' + response.data.shortenURL
+          shortenURL: `${window.location.protocol}//${window.location.host}/${response.data.shortenURL}`
         }
         this.urlResults.push(url)
         // Clears input form after successfully generating shorten URL.
