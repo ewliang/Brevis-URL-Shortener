@@ -6,10 +6,11 @@
 
 <script>
 import axios from 'axios'
+const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL ? process.env.BREVIS_BACKEND_URL : 'http://localhost:4000'
 
 export default {
   async asyncData ({ params }) {
-    var url = await axios.get(`http://localhost:4000/api/${params.shortenURL}`)
+    var url = await axios.get(`${BREVIS_BACKEND_URL}/api/${params.shortenURL}`)
     return {
       originalURL: url.data
     }
