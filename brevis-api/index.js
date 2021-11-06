@@ -16,7 +16,7 @@ const app = express();
 app.use(helmet());
 
 mongoose.Promise = require('bluebird');
-mongoose.connect(databaseConfig.database.connectionURL, { useNewUrlParser: true });
+mongoose.connect(databaseConfig.database.connectionURL, { useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'There is an error while attempting to connect to the database.'));
 db.once('open', function() {
