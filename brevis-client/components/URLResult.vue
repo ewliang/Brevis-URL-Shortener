@@ -31,15 +31,16 @@ export default {
   min-width: 300px;
   width: 100%;
   max-width: 80%;
-  color: #828d99;
+  color: #666666;
   background-color: #fafafa;
   padding: 30px;
   margin: 0 auto !important;
 }
 
 .original-url {
-  font-weight: 100;
+  font-weight: 400;
   font-size: 16px;
+  margin-bottom: 3px;
 }
 
 .shorten-url {
