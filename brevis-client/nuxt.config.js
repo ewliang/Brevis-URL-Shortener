@@ -25,6 +25,9 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  env: {
+    BREVIS_BACKEND_URL: process.env.BREVIS_BACKEND_URL || 'http://localhost:4000'
+  },
   /*
   ** Build configuration
   */

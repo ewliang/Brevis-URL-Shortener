@@ -15,7 +15,7 @@
 <script>
 import axios from 'axios'
 import URLResult from '~/components/URLResult.vue'
-const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL ? process.env.BREVIS_BACKEND_URL : 'http://localhost:4000'
+const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL
 
 export default {
   components: {

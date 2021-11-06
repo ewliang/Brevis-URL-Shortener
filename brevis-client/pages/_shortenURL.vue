@@ -6,7 +6,7 @@
 
 <script>
 import axios from 'axios'
-const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL ? process.env.BREVIS_BACKEND_URL : 'http://localhost:4000'
+const BREVIS_BACKEND_URL = process.env.BREVIS_BACKEND_URL
 
 export default {
   async asyncData ({ params }) {
