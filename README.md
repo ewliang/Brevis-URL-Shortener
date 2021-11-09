@@ -10,7 +10,7 @@ NOTE:
 **Demo**
 : [https://brevisapp.herokuapp.com](https://brevisapp.herokuapp.com)
 
-![Brevis Website Screenshot](https://www.eric-liang.com/_nuxt/img/brevis-website-design-2018.604aa1b.jpg)
+![Brevis Website Screenshot](https://eric-liang.com/_nuxt/img/brevis-website-design-2018.ed8fe4a.jpg)
 
 ## Getting Started
 ### Requirements
